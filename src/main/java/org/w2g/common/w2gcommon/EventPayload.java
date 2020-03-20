@@ -22,6 +22,8 @@ public class EventPayload {
     long time;
     //@JsonProperty("time")
     //LocalDateTime time;
+    @JsonProperty("id")
+    String id;
     @JsonProperty("user_id")
     String userId;
     @JsonProperty("user_to")
@@ -63,13 +65,21 @@ this.thumbDownloadUrl = eventPayload.thumbDownloadUrl;
 }
 
 
+
+
 @Override
 public String toString() {
-	return "EventPayload [eventName=" + eventName + ", time=" + time + ", userId=" + userId + ", userTo=" + userTo
-			+ ", actualUserId=" + actualUserId + ", userName=" + userName + ", disConnected=" + disConnected
+	return "EventPayload [eventName=" + eventName + ", time=" + time + ", id=" + id + ", userId=" + userId + ", userTo="
+			+ userTo + ", actualUserId=" + actualUserId + ", userName=" + userName + ", disConnected=" + disConnected
 			+ ", heartBeat=" + heartBeat + ", consumerToGeneralChannelName=" + consumerToGeneralChannelName
 			+ ", heartBeatNumber=" + heartBeatNumber + ", reply=" + reply + ", thumbDownloadUrl=" + thumbDownloadUrl
 			+ ", messagePayload=" + messagePayload + "]";
+}
+public String getId() {
+	return id;
+}
+public void setId(String id) {
+	this.id = id;
 }
 public long getTime() {
 	return time;
