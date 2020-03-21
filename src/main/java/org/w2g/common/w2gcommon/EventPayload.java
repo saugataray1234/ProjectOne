@@ -23,7 +23,7 @@ public class EventPayload {
     //@JsonProperty("time")
     //LocalDateTime time;
     @JsonProperty("id")
-    String id;
+    int id;
     @JsonProperty("user_id")
     String userId;
     @JsonProperty("user_to")
@@ -52,6 +52,7 @@ public class EventPayload {
 
 public EventPayload(EventPayload eventPayload) {
 super();
+this.id = eventPayload.id;
 this.eventName = eventPayload.eventName;
 this.userId = eventPayload.userId;
 this.userTo = eventPayload.userTo;
@@ -75,10 +76,11 @@ public String toString() {
 			+ ", heartBeatNumber=" + heartBeatNumber + ", reply=" + reply + ", thumbDownloadUrl=" + thumbDownloadUrl
 			+ ", messagePayload=" + messagePayload + "]";
 }
-public String getId() {
+
+public int getId() {
 	return id;
 }
-public void setId(String id) {
+public void setId(int id) {
 	this.id = id;
 }
 public long getTime() {
